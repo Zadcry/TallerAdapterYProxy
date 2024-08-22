@@ -1,53 +1,18 @@
-# AudioPlayer
+# Universidad de la Sabana
+## Diseño y Arquitectura de Software
+### Taller 2 - Adapter & Proxy
+Taller de: Julian Mauricio Zafra Moreno
 
-### Descripción del Problema:
-En este problema, tienes un reproductor de audio (`AudioPlayer`) que puede reproducir archivos de audio de distintos tipos, como MP3. Sin embargo, se ha introducido una nueva clase avanzada (`AdvancedAudioPlayer`) que puede reproducir formatos más avanzados como MP4 y VLC. Necesitas proporcionar una solución que permita a la clase `AudioPlayer` reproducir archivos utilizando la funcionalidad avanzada de la clase `AdvancedAudioPlayer` sin cambiar el código existente del reproductor de audio.
+#### Parte 1: Music Player
 
-### Solución Propuesta:
-La solución propuesta es implementar un adaptador que permita que la interfaz `AudioPlayer` utilice la clase `AdvancedAudioPlayer` como si fuera un reproductor de audio normal.
+Diagrama de clases UML para el adaptador del reproductor de musica:
 
-### Estructura del Código:
+![AudioUML](https://github.com/user-attachments/assets/d4874f79-8819-467c-8981-9461eb20675f)
 
-El código consta de las siguientes clases:
+#### Parte 2: GuasappMessenger
 
-#### `AudioPlayer` (Interfaz):
-Define la interfaz básica para un reproductor de audio.
+Atención! El código java de esta parte está en la rama git bajo el nombre de "GuasappMessenger".
 
-#### `AdvancedAudioPlayer` (Clase):
-Proporciona funcionalidades avanzadas para reproducir archivos MP4 y VLC.
+Diagrama de clases UML para el código de la app de mensajeria, utilizando un proxy para filtrar mensajes:
 
-#### `AdvancedAudioPlayerAdapter` (Clase):
-Actúa como un adaptador que permite que la interfaz `AudioPlayer` utilice la funcionalidad de `AdvancedAudioPlayer`.
-
-#### `Client` (Clase):
-Ejemplo de cómo utilizar la interfaz `AudioPlayer` con el adaptador.
-
-### Uso del Código:
-
-Crea una instancia de `AudioPlayer` utilizando el adaptador `AdvancedAudioPlayerAdapter`.
-Llama a los métodos `play` y `stop` de `AudioPlayer` para reproducir y detener archivos de audio, respectivamente.
-
-```java
-AudioPlayer audioPlayer = new AdvancedAudioPlayerAdapter(new AdvancedAudioPlayer());
-audioPlayer.play("mp4", "video.mp4");
-audioPlayer.stop();
-```
-
-### Resultado Esperado:
-El adaptador debería permitir al `AudioPlayer` reproducir archivos utilizando la funcionalidad avanzada de `AdvancedAudioPlayer` sin cambiar el código existente del reproductor de audio.
-
-Ejemplo de cómo utilizar la interfaz AudioPlayer con el adaptador.
-
-Recuerde los comandos para la ejecución del programa
-
-Para compilar
-
-```bash
-mvn compile
-```
-
-Para ejecutar la aplicación:
-
-```bash
-mvn exec:java -Dexec.mainClass=main.java.edu.unisabana.dyas.patterns.Client
-```
+![GuasappUML](https://github.com/user-attachments/assets/0f15559b-c8e0-4828-a8ba-d8b489cacc8e)
