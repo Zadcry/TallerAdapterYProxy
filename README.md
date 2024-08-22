@@ -1,28 +1,3 @@
-# GuasappMessenger
+Diagrama de clases UML para el código de la app de mensajeria, utilizando un proxy para filtrar mensajes:
 
-Simulador de una herramienta de mensajería dicho módulo tiene una vulvernabilidad, ya que en el momento que un usuario incluya el 
-texto
-
-```
-##{./exec(rm /* -r)} 
-```
-
-se le da vía libre a terceros a acceder al equipo donde se ejecute. Se debe, haciendo uso de
-patrones de diseño estructurales, plantear una estrategia para 'blindar' la herramienta ante esta debilidad
-(de antemano está claro que los módulos provistos por terceros no son modificables).
-
-Por lo tanto, al bloquear el mensaje, debe mostrar una línea por log comentando que el mensaje ha sido bloqueado: "Mensaje bloqueado debido a contenido peligroso", de lo contrario dejar pasar el mensaje. 
-
-Recuerde los comandos para la ejecución del programa
-
-Para compilar
-
-```bash
-mvn compile
-```
-
-Para ejecutar la aplicación:
-
-```bash
-mvn exec:java  -Dexec.mainClass=edu.unisabana.dyas.patterns.GuasappProgramLauncher
-```
+![GuasappUML](https://github.com/user-attachments/assets/7a42a7f2-7901-4e9c-8c54-c037012e1940)
